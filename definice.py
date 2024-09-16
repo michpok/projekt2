@@ -48,7 +48,6 @@ def generuj_cislo(cislo):
 
         rada.remove(cislo[2])
         cislo.append(random.choice(rada))
-    print(cislo)
 
 
 def kontrola_0(data,):  # kontrola na 0
@@ -89,5 +88,5 @@ def kontrola_duplikat(data):    # kontrola na duplikat
 
 # vyhodnoceni vysledku podle poctu pokusu
 def pokusi(cislo1, pocet, cilo2, slovo):
-    if cislo1 < pocet < cilo2:
+    if cislo1 < pocet <= cilo2:
         print("That's ", slovo)
