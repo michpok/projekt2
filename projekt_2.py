@@ -26,14 +26,14 @@ while procesingNumber != number:
 
     procesingNumber = []
     guessNumber = []
-    hadaneCisla = input()
+    guessNumbers = input()
     counter = counter + 1
 
     # kontrola na existenci pismen
-    if not hadaneCisla.isnumeric():
-        print("neni cislo", "\n", "-" * 50)
+    if not guessNumbers.isnumeric():
+        print("it is not number", "\n", "-" * 50)
         continue
-    guessNumber.append(hadaneCisla)
+    guessNumber.append(guessNumbers)
 
     # zpracovani cisla do listu
     guessNumber_str = str(guessNumber[0])
