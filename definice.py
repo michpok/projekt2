@@ -85,4 +85,11 @@ def attempt(cislo1, pocet, cislo2, slovo):
         exit()
 
 
+def singular_plural_words(data, word_list, text1, text2):
 
+    if len(data) == 1:
+        word_list.append(text1)
+    else:
+        word_list.append(text2)
+
+    return word_list

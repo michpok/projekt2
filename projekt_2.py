@@ -7,7 +7,7 @@ discord: michalpokorny.
 import math
 from definice import (find_cows, find_bulss, number_generator,
                       check_0, check_length,
-                      check_duplicate, attempt)
+                      check_duplicate, attempt, singular_plural_words)
 
 print("Hi there!", "\n", "-"*50)
 
@@ -50,29 +50,24 @@ while procesingNumber != number:
 
     # fuze elementu listu do jednoho elemntu
     final_procesing = [str(i) for i in procesingNumber]
-    find_out_number = int("".join(final_procesing))
+    yours_guess = int("".join(final_procesing))
 
     bulls = []
-    find_bulss(procesingNumber, number, bulls)
-
-    if len(bulls) == 1:
-        wordBulls = 'bull'
-    else:
-        wordBulls = 'bulls'
-
     cows = []
+    find_bulss(procesingNumber, number, bulls)
     find_cows(procesingNumber, number, cows)
-    if len(cows) == 1:
-        wordCows = 'cow'
-    else:
-        wordCows = 'cows'
+
+    wordBulls = []
+    wordCows = []
+    singular_plural_words(bulls, wordBulls, 'bull', 'bulss')
+    singular_plural_words(cows, wordCows, 'cow', 'cows')
 
     if procesingNumber != number:
-        print(">>>", find_out_number, "\n",
-              len(bulls), wordBulls, len(cows), wordCows,
+        print(">>>", yours_guess, "\n",
+              len(bulls), wordBulls[0], len(cows), wordCows[0],
               "\n", "-"*50)
     else:
-        print(">>>", find_out_number, "\n", "Correct, you've guessed the right number")
+        print(">>>", yours_guess, "\n", "Correct, you've guessed the right number")
 
 print('Total number of guesses:', counter, "\n", "-"*50)
 
@@ -83,7 +78,3 @@ elif counter <= 20:
     attempt(10, counter, 20, 'average')
 else:
     attempt(20, counter, math.inf, 'not so good')
-
-
-
-
