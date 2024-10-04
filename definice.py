@@ -45,7 +45,6 @@ def number_generator(number):
 
     number_range.remove(number[2])
     number.append(random.choice(number_range))
-    print(number)
 
 
 def check_0(data,):  # kontrola na 0
