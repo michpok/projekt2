@@ -52,11 +52,13 @@ while procesingNumber != number:
     final_procesing = [str(i) for i in procesingNumber]
     yours_guess = int("".join(final_procesing))
 
+    # najde bulls a cowss
     bulls = []
     cows = []
     find_bulss(procesingNumber, number, bulls)
     find_cows(procesingNumber, number, cows)
 
+    # urci cislo slova
     wordBulls = []
     wordCows = []
     singular_plural_words(bulls, wordBulls, 'bull', 'bulss')

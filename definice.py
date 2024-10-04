@@ -31,20 +31,21 @@ def find_bulss(data, cislo, bull):
     return bull
 
 
-def number_generator(cislo):
-    rada = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+def number_generator(number):
+    number_range = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-    cislo.append(random.choice(rada))
-    rada.append(0)
+    number.append(random.choice(number_range))
+    number_range.append(0)
 
-    rada.remove(cislo[0])
-    cislo.append(random.choice(rada))
+    number_range.remove(number[0])
+    number.append(random.choice(number_range))
 
-    rada.remove(cislo[1])
-    cislo.append(random.choice(rada))
+    number_range.remove(number[1])
+    number.append(random.choice(number_range))
 
-    rada.remove(cislo[2])
-    cislo.append(random.choice(rada))
+    number_range.remove(number[2])
+    number.append(random.choice(number_range))
+    print(number)
 
 
 def check_0(data,):  # kontrola na 0
